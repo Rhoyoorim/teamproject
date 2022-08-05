@@ -15,7 +15,7 @@
 
 <meta name="description" content="" />
 <meta name="keywords" content="free template, bootstrap, bootstrap4" />
-
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Single+Day&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -56,14 +56,12 @@
 	<nav class="site-nav">
 		<div class="container">
 			<div class="site-navigation">
-				<a href="index.html" class="logo float-left m-0">Style <span
-					class="text-primary">.</span></a>
+				<a href="index.html" class="logo float-left m-0">개밥집</a>
 
 				<ul
 					class="js-clone-nav d-none d-lg-inline-noone text-left site-menu">
-					<li><a href="index.html">Home</a></li>
-					<li class="has-children"><a href="#">Pages</a>
-						<ul class="dropdown">
+					<li class="active"><a href="index.html">홈</a></li>
+					<li><a href="contact.html">반려동물 등록</a> <!-- <ul class="dropdown">
 							<li><a href="portfolio.html">Portfolio</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="single.html">Single</a></li>
@@ -77,11 +75,9 @@
 									<li><a href="#">Sub Menu Three</a></li>
 								</ul></li>
 							<li><a href="#">Menu Three</a></li>
-						</ul></li>
-					<li><a href="portfolio.html">Portfolio</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="active"><a href="contact.html">Contact Us</a></li>
+						</ul></li> -->
+					<li><a href="portfolio.html">고객센터</a></li>
+					<li><a href="login.html">로그인/회원가입</a></li>
 				</ul>
 
 				<a href="#"
@@ -117,34 +113,35 @@
 
 					<div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
 
-						<form method="post" action="signsuccess.html">
+						<form method="post" name='signup' action="signsuccess.html">
 							<div class="form-group">
-								<label class="text-black" for="id">*아이디*</label> <input
+								<label class="text-black" for="id">아이디*</label> <input
 									type="text" class="form-control" id="id" placeholder="id"
 									required pattern="^[a-z0-9_-]{5,20}$" 
 									title="5~20자의 영문 소문자, 숫자, 특수기호(_),(-)만 사용 가능">
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="pw">*비밀번호*</label> <input
+								<label class="text-black" for="pw">비밀번호*</label> <input
 									type="password" class="form-control" id="pw"
 									placeholder="pw" required pattern="^[a-z0-9_-*]{8,20}$"
-									title="8~20자의 영문 소문자, 숫자, 특수기호(_),(-),(*)만 사용 가능">
+									title="8~20자의 영문 소문자, 숫자, 특수기호(_),(-),(*)만 사용 가능" onchange="check()">
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="pwcheck">*비밀번호 확인*</label> <input
+								<label class="text-black" for="pwcheck">비밀번호 확인*</label> <input
 									type="password" class="form-control" id="pwch"
 									placeholder="pw 확인" required="required"
-									title="비밀번호 확인을 해주세요!">
-									<br>
-								<input type="button" onclick="check()" class ="form-contrel" id="pwchbtn" value="비밀번호 확인">
+									title="비밀번호 확인을 해주세요!" onchange="check()">
+									<span id="check"></span>
+									
+								<!-- <br><input type="button" onclick="check()" class ="form-contrel" id="pwchbtn" value="비밀번호 확인">-->
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="name">*이름*</label> <input
+								<label class="text-black" for="name">이름*</label> <input
 									type="text" class="form-control" id="name"
 									placeholder="이름" required="required" title="이름을 입력하세요.">
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="tel">*전화번호*</label> <input
+								<label class="text-black" for="tel">전화번호*</label> <input
 									type="tel" class="form-control" id="tel"
 									placeholder="휴대전화" 
 									required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
@@ -153,7 +150,7 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<label class="text-black" for="email">*이메일 id*</label> <input
+										<label class="text-black" for="email">이메일 id*</label> <input
 											type="text" class="form-control" id="email"
 											placeholder="이메일" required pattern="^[a-zA-Z0-9_-]{5,20}$"
 											title="5~20사이 아이디 입력">
@@ -161,9 +158,8 @@
 								</div>
 								<div class="col-6">
 									<div class="form-group">
-										<label class="text-black" for="address">*선택*</label> 
+										<label class="text-black" for="address">선택*</label> 
 										<select class="form-control" id="address" required="required" title="선택하세요">
-											<option>주소 선택</option>
 											<option>@naver.com</option>
 											<option>@google.com</option>
 										</select>
@@ -171,7 +167,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="birthdate">*생년월일*</label> <input
+								<label class="text-black" for="birthdate">생년월일*</label> <input
 									type="date" class="form-control" id="birthdate"
 									placeholder="선택" required="required" title="생년월일을 선택해주세요.">
 							</div>
@@ -195,7 +191,7 @@
 
 							<br>
 
-							<button type="submit" class="btn btn-primary" id = "allcheck">회원가입</button>
+							<button type="submit" class="btn btn-primary" id = "allcheck"">회원가입</button>
 							<button type="reset" class="btn btn-primary" id = "reset">작성 초기화</button>
 						</form>
 
@@ -210,8 +206,15 @@
 
 	</div>
 	<script type="text/javascript">
+		var nowUtc = Date.now(); // 오늘 날짜
+		var timeoff = new Date().getTimezoneOffset()*60000; // 초 단위로 끊음
+		var today= new Date(nowUtc-timeoff).toISOString().split("T")[0];
+		document.getElementById('birthdate').setAttribute("max", today);
+		// 오늘 이후의 날짜 선택 불가능하게 만드는 작업
+		document.getElementById('birthdate').value=new Date().toISOString().substring(0,10);
+		// 오늘 날짜가 기본 세팅
+		
 		function check() {
-			var cnt;
 			var p1 = document.getElementById('pw').value;
 			var p2 = document.getElementById('pwch').value;
 			if (p1.length <= 7) {
@@ -220,23 +223,16 @@
 				alert('비밀번호 확인을 해야합니다!');
 			}
 			else if (p1 != p2) {
-				alert('비밀번호가 일치하지 않습니다.');
-				return false;
+				//alert('비밀번호가 일치하지 않습니다.');
+				document.getElementById('check').innerHTML="비밀번호가 일치하지 않습니다.";
+				document.getElementById('check').style.color='red';
 			} else {
-				alert("비밀번호가 일치합니다.");
-				cnt++;
-				return true;
+				document.getElementById('check').innerHTML="비밀번호가 일치합니다.";
+				document.getElementById('check').style.color='blue';
 			}
 		}
-		function allcheck(){
-			var cnt = document.getElementById("pwchbtn").value;
-			if(cnt==0){
-				alert('비밀번호체크를 해주세요!');
-			}
-			else{
-				
-			}
-		}
+		
+		
 		
 	</script>
 
