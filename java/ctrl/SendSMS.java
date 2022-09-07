@@ -29,8 +29,8 @@ public class SendSMS {
 	}
 	
 	public void certifiedPhoneNumber(String phoneNumber, String numStr) {
-		String api_key="NCSUZWO23FKPMW9G";
-		String api_secret="4W8VXYLJEGP7VVSQUCZ2AIMJZGNH3JAS";
+		String api_key="키값";
+		String api_secret="비밀번호 값";
 		Message coolsms = new Message(api_key, api_secret);
 		
 		HashMap<String, String> params = new HashMap<String, String>();
