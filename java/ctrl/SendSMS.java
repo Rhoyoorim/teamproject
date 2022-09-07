@@ -35,7 +35,7 @@ public class SendSMS {
 		
 		HashMap<String, String> params = new HashMap<String, String>();
 	    params.put("to", phoneNumber); // 수신번호
-	    params.put("from", "01032357350"); // 발신번호
+	    params.put("from", "전화번호"); // 발신번호
 	    params.put("type", "SMS"); // Message type ( SMS, LMS, MMS, ATA )
 	    params.put("text", "펫키지 휴대폰인증 테스트 메시지 : 인증번호는 [" + numStr+"] 입니다."); // 문자내용    
 	    params.put("app_version", "JAVA SDK v1.2"); // application name and version
